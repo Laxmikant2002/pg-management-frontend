@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+﻿import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import {
@@ -121,7 +121,7 @@ export default function TenantsListScreen() {
         style={styles.viewDetailsButton}
         onPress={() => handleViewDetails(item.id)}>
         <Text style={styles.viewDetailsButtonText}>View Details</Text>
-        <Ionicons name="chevron-forward" size={18} color="#0E9F6E" />
+        <Ionicons name="chevron-forward" size={18} color="#00BCD4" />
       </TouchableOpacity>
     </TouchableOpacity>
   );
@@ -191,14 +191,14 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
   },
   addButton: {
-    backgroundColor: '#0E9F6E',
+    backgroundColor: '#00BCD4',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 14,
     borderRadius: 12,
     gap: 8,
-    shadowColor: '#0E9F6E',
+    shadowColor: '#00BCD4',
     shadowOffset: {
       width: 0,
       height: 2,
@@ -265,7 +265,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   statusTextActive: {
-    color: '#0E9F6E',
+    color: '#00BCD4',
   },
   statusTextInactive: {
     color: '#DC2626',
@@ -294,7 +294,7 @@ const styles = StyleSheet.create({
     paddingTop: 12,
   },
   viewDetailsButtonText: {
-    color: '#0E9F6E',
+    color: '#00BCD4',
     fontSize: 14,
     fontWeight: '600',
     marginRight: 4,
@@ -316,3 +316,4 @@ const styles = StyleSheet.create({
     color: '#9CA3AF',
   },
 });
+

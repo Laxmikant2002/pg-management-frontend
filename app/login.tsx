@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+﻿import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import {
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
   mainTitle: {
     fontSize: 48,
     fontWeight: 'bold',
-    color: '#0E9F6E',
+    color: '#00BCD4',
     marginBottom: 8,
     letterSpacing: 2,
   },
@@ -249,15 +249,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   checkboxChecked: {
-    backgroundColor: '#0E9F6E',
-    borderColor: '#0E9F6E',
+    backgroundColor: '#00BCD4',
+    borderColor: '#00BCD4',
   },
   checkboxLabel: {
     fontSize: 14,
     color: '#374151',
   },
   signInButton: {
-    backgroundColor: '#0E9F6E',
+    backgroundColor: '#00BCD4',
     borderRadius: 8,
     paddingVertical: 14,
     paddingHorizontal: 24,
@@ -265,7 +265,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 16,
-    shadowColor: '#0E9F6E',
+    shadowColor: '#00BCD4',
     shadowOffset: {
       width: 0,
       height: 2,
@@ -372,3 +372,4 @@ const styles = StyleSheet.create({
 });
 
 export default LoginScreen;
+

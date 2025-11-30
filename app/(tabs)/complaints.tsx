@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+﻿import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import {
@@ -94,7 +94,7 @@ export default function ComplaintsListScreen() {
       case 'IN_PROGRESS':
         return { bg: '#FEF3C7', text: '#F59E0B', icon: 'time-outline' };
       case 'RESOLVED':
-        return { bg: '#D1FAE5', text: '#0E9F6E', icon: 'checkmark-circle' };
+        return { bg: '#D1FAE5', text: '#00BCD4', icon: 'checkmark-circle' };
       default:
         return { bg: '#F3F4F6', text: '#6B7280', icon: 'help-circle' };
     }
@@ -123,7 +123,7 @@ export default function ComplaintsListScreen() {
         onPress={() => handleViewDetails(item.id)}>
         <View style={styles.complaintHeader}>
           <View style={styles.titleContainer}>
-            <Ionicons name="document-text-outline" size={20} color="#0E9F6E" />
+            <Ionicons name="document-text-outline" size={20} color="#00BCD4" />
             <Text style={styles.complaintTitle}>{item.title}</Text>
           </View>
           <View style={[styles.statusBadge, { backgroundColor: statusColor.bg }]}>
@@ -203,7 +203,7 @@ export default function ComplaintsListScreen() {
           <Text style={styles.summaryLabel}>In Progress</Text>
         </View>
         <View style={styles.summaryCard}>
-          <Ionicons name="checkmark-circle" size={24} color="#0E9F6E" />
+          <Ionicons name="checkmark-circle" size={24} color="#00BCD4" />
           <Text style={styles.summaryValue}>{resolvedComplaints.length}</Text>
           <Text style={styles.summaryLabel}>Resolved</Text>
         </View>
@@ -298,14 +298,14 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   addButton: {
-    backgroundColor: '#0E9F6E',
+    backgroundColor: '#00BCD4',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 14,
     borderRadius: 12,
     gap: 8,
-    shadowColor: '#0E9F6E',
+    shadowColor: '#00BCD4',
     shadowOffset: {
       width: 0,
       height: 2,
@@ -432,4 +432,5 @@ const styles = StyleSheet.create({
     color: '#9CA3AF',
   },
 });
+
 

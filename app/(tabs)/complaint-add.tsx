@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+﻿import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import {
@@ -136,7 +136,7 @@ export default function AddComplaintScreen() {
                   }}>
                   <Text style={styles.dropdownItemText}>None (General Complaint)</Text>
                   {!formData.roomId && (
-                    <Ionicons name="checkmark" size={20} color="#0E9F6E" />
+                    <Ionicons name="checkmark" size={20} color="#00BCD4" />
                   )}
                 </TouchableOpacity>
                 {availableRooms.map((room) => (
@@ -149,7 +149,7 @@ export default function AddComplaintScreen() {
                     }}>
                     <Text style={styles.dropdownItemText}>Room {room}</Text>
                     {formData.roomId === room && (
-                      <Ionicons name="checkmark" size={20} color="#0E9F6E" />
+                      <Ionicons name="checkmark" size={20} color="#00BCD4" />
                     )}
                   </TouchableOpacity>
                 ))}
@@ -185,7 +185,7 @@ export default function AddComplaintScreen() {
                   }}>
                   <Text style={styles.dropdownItemText}>None</Text>
                   {!formData.tenantId && (
-                    <Ionicons name="checkmark" size={20} color="#0E9F6E" />
+                    <Ionicons name="checkmark" size={20} color="#00BCD4" />
                   )}
                 </TouchableOpacity>
                 {availableTenants.map((tenant) => (
@@ -201,7 +201,7 @@ export default function AddComplaintScreen() {
                       <Text style={styles.dropdownItemSubtext}>Room {tenant.roomNumber}</Text>
                     </View>
                     {formData.tenantId === tenant.id && (
-                      <Ionicons name="checkmark" size={20} color="#0E9F6E" />
+                      <Ionicons name="checkmark" size={20} color="#00BCD4" />
                     )}
                   </TouchableOpacity>
                 ))}
@@ -365,12 +365,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#0E9F6E',
+    backgroundColor: '#00BCD4',
     borderRadius: 12,
     paddingVertical: 16,
     gap: 8,
     marginTop: 8,
-    shadowColor: '#0E9F6E',
+    shadowColor: '#00BCD4',
     shadowOffset: {
       width: 0,
       height: 2,
@@ -385,4 +385,5 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
 });
+
 

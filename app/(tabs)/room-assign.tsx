@@ -126,17 +126,17 @@ export default function AssignRoomScreen() {
                   }}>
                   <View style={styles.dropdownItemContent}>
                     <View style={styles.roomInfoRow}>
-                      <Ionicons name="home" size={20} color="#0E9F6E" />
+                      <Ionicons name="home" size={20} color="#00BCD4" />
                       <Text style={styles.dropdownItemText}>
                         Room {room.roomNumber}
                       </Text>
                     </View>
                     <Text style={styles.dropdownItemSubtext}>
-                      {room.bedCount} {room.bedCount === 1 ? 'Bed' : 'Beds'} â€¢ {room.status}
+                      {room.bedCount} {room.bedCount === 1 ? 'Bed' : 'Beds'} • {room.status}
                     </Text>
                   </View>
                   {selectedRoom === room.id && (
-                    <Ionicons name="checkmark" size={20} color="#0E9F6E" />
+                    <Ionicons name="checkmark" size={20} color="#00BCD4" />
                   )}
                 </TouchableOpacity>
               ))}
@@ -174,16 +174,16 @@ export default function AssignRoomScreen() {
                   }}>
                   <View style={styles.dropdownItemContent}>
                     <View style={styles.tenantInfoRow}>
-                      <Ionicons name="person" size={20} color="#0E9F6E" />
+                      <Ionicons name="person" size={20} color="#00BCD4" />
                       <Text style={styles.dropdownItemText}>{tenant.name}</Text>
                     </View>
                     <Text style={styles.dropdownItemSubtext}>
                       {tenant.phone}
-                      {tenant.currentRoom && ` â€¢ Current: Room ${tenant.currentRoom}`}
+                      {tenant.currentRoom && ` • Current: Room ${tenant.currentRoom}`}
                     </Text>
                   </View>
                   {selectedTenant === tenant.id && (
-                    <Ionicons name="checkmark" size={20} color="#0E9F6E" />
+                    <Ionicons name="checkmark" size={20} color="#00BCD4" />
                   )}
                 </TouchableOpacity>
               ))}
@@ -196,14 +196,14 @@ export default function AssignRoomScreen() {
           <View style={styles.infoCard}>
             <Text style={styles.infoCardTitle}>Assignment Summary</Text>
             <View style={styles.infoRow}>
-              <Ionicons name="person" size={20} color="#0E9F6E" />
+              <Ionicons name="person" size={20} color="#00BCD4" />
               <View style={styles.infoContent}>
                 <Text style={styles.infoLabel}>Tenant</Text>
                 <Text style={styles.infoValue}>{selectedTenantData?.name}</Text>
               </View>
             </View>
             <View style={styles.infoRow}>
-              <Ionicons name="home" size={20} color="#0E9F6E" />
+              <Ionicons name="home" size={20} color="#00BCD4" />
               <View style={styles.infoContent}>
                 <Text style={styles.infoLabel}>Room</Text>
                 <Text style={styles.infoValue}>
@@ -379,11 +379,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#0E9F6E',
+    backgroundColor: '#00BCD4',
     borderRadius: 12,
     paddingVertical: 16,
     gap: 8,
-    shadowColor: '#0E9F6E',
+    shadowColor: '#00BCD4',
     shadowOffset: {
       width: 0,
       height: 2,
@@ -403,4 +403,5 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
 });
+
 

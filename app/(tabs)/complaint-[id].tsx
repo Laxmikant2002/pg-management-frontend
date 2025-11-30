@@ -2,12 +2,12 @@ import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import {
-    Alert,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  Alert,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -87,7 +87,7 @@ export default function ComplaintDetailsScreen() {
       case 'IN_PROGRESS':
         return { bg: '#FEF3C7', text: '#F59E0B', icon: 'time-outline' };
       case 'RESOLVED':
-        return { bg: '#D1FAE5', text: '#0E9F6E', icon: 'checkmark-circle' };
+        return { bg: '#D1FAE5', text: '#00BCD4', icon: 'checkmark-circle' };
       default:
         return { bg: '#F3F4F6', text: '#6B7280', icon: 'help-circle' };
     }
@@ -206,7 +206,7 @@ export default function ComplaintDetailsScreen() {
         {/* Complaint Info Card */}
         <View style={styles.card}>
           <View style={styles.titleContainer}>
-            <Ionicons name="document-text" size={24} color="#0E9F6E" />
+            <Ionicons name="document-text" size={24} color="#00BCD4" />
             <Text style={styles.complaintTitle}>{complaint.title}</Text>
           </View>
 
@@ -225,7 +225,7 @@ export default function ComplaintDetailsScreen() {
           {complaint.roomNumber && (
             <View style={styles.infoRow}>
               <View style={styles.infoIconContainer}>
-                <Ionicons name="home" size={20} color="#0E9F6E" />
+                <Ionicons name="home" size={20} color="#00BCD4" />
               </View>
               <View style={styles.infoContent}>
                 <Text style={styles.infoLabel}>Room</Text>
@@ -253,7 +253,7 @@ export default function ComplaintDetailsScreen() {
           {complaint.tenantName && (
             <View style={styles.infoRow}>
               <View style={styles.infoIconContainer}>
-                <Ionicons name="person" size={20} color="#0E9F6E" />
+                <Ionicons name="person" size={20} color="#00BCD4" />
               </View>
               <View style={styles.infoContent}>
                 <Text style={styles.infoLabel}>Tenant</Text>
@@ -327,7 +327,7 @@ export default function ComplaintDetailsScreen() {
 
         {/* Change Status Button */}
         <TouchableOpacity style={styles.changeStatusButton} onPress={handleChangeStatus}>
-          <Ionicons name="sync-outline" size={20} color="#0E9F6E" />
+          <Ionicons name="sync-outline" size={20} color="#00BCD4" />
           <Text style={styles.changeStatusButtonText}>Change Status</Text>
         </TouchableOpacity>
       </ScrollView>
@@ -470,14 +470,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#FFFFFF',
     borderWidth: 2,
-    borderColor: '#0E9F6E',
+    borderColor: '#00BCD4',
     borderRadius: 12,
     paddingVertical: 14,
     gap: 8,
     marginTop: 8,
   },
   changeStatusButtonText: {
-    color: '#0E9F6E',
+    color: '#00BCD4',
     fontSize: 16,
     fontWeight: '600',
   },

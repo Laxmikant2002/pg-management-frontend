@@ -83,7 +83,7 @@ export default function RoomDetailsScreen() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'Occupied':
-        return { bg: '#D1FAE5', text: '#0E9F6E' };
+        return { bg: '#D1FAE5', text: '#00BCD4' };
       case 'Vacant':
         return { bg: '#DBEAFE', text: '#3B82F6' };
       case 'Maintenance':
@@ -142,7 +142,7 @@ export default function RoomDetailsScreen() {
         <View style={styles.card}>
           <View style={styles.roomHeader}>
             <View style={styles.roomIconContainer}>
-              <Ionicons name="home" size={32} color="#0E9F6E" />
+              <Ionicons name="home" size={32} color="#00BCD4" />
             </View>
             <View style={styles.roomInfo}>
               <Text style={styles.roomNumber}>Room {room.roomNumber}</Text>
@@ -180,7 +180,7 @@ export default function RoomDetailsScreen() {
                 <View style={styles.amenitiesList}>
                   {room.amenities.map((amenity: string, index: number) => (
                     <View key={index} style={styles.amenityTag}>
-                      <Ionicons name="checkmark-circle" size={16} color="#0E9F6E" />
+                      <Ionicons name="checkmark-circle" size={16} color="#00BCD4" />
                       <Text style={styles.amenityText}>{amenity}</Text>
                     </View>
                   ))}
@@ -199,7 +199,7 @@ export default function RoomDetailsScreen() {
               {room.currentTenants.map((tenant: any, index: number) => (
                 <View key={tenant.id || index} style={styles.tenantItem}>
                   <View style={styles.tenantIconContainer}>
-                    <Ionicons name="person" size={24} color="#0E9F6E" />
+                    <Ionicons name="person" size={24} color="#00BCD4" />
                   </View>
                   <View style={styles.tenantInfo}>
                     <Text style={styles.tenantName}>{tenant.name}</Text>
@@ -381,7 +381,7 @@ const styles = StyleSheet.create({
   },
   amenityText: {
     fontSize: 12,
-    color: '#0E9F6E',
+    color: '#00BCD4',
     fontWeight: '500',
   },
   cardTitle: {
@@ -467,11 +467,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#0E9F6E',
+    backgroundColor: '#00BCD4',
     borderRadius: 12,
     paddingVertical: 14,
     gap: 8,
-    shadowColor: '#0E9F6E',
+    shadowColor: '#00BCD4',
     shadowOffset: {
       width: 0,
       height: 2,

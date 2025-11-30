@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+﻿import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import React from 'react';
 import {
@@ -133,7 +133,7 @@ export default function PaymentHistoryScreen() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'Paid':
-        return { bg: '#D1FAE5', text: '#0E9F6E', icon: 'checkmark-circle' };
+        return { bg: '#D1FAE5', text: '#00BCD4', icon: 'checkmark-circle' };
       case 'Pending':
         return { bg: '#FEF3C7', text: '#F59E0B', icon: 'time-outline' };
       case 'Overdue':
@@ -171,7 +171,7 @@ export default function PaymentHistoryScreen() {
         <View style={styles.dateInfo}>
           {item.status === 'Paid' && item.paidDate && (
             <View style={styles.dateRow}>
-              <Ionicons name="checkmark-circle" size={16} color="#0E9F6E" />
+              <Ionicons name="checkmark-circle" size={16} color="#00BCD4" />
               <Text style={styles.dateText}>Paid on: {item.paidDate}</Text>
             </View>
           )}
@@ -204,7 +204,7 @@ export default function PaymentHistoryScreen() {
       <View style={styles.tenantCard}>
         <View style={styles.tenantHeader}>
           <View style={styles.tenantIconContainer}>
-            <Ionicons name="person" size={32} color="#0E9F6E" />
+            <Ionicons name="person" size={32} color="#00BCD4" />
           </View>
           <View style={styles.tenantInfo}>
             <Text style={styles.tenantName}>{tenant.name}</Text>
@@ -450,4 +450,5 @@ const styles = StyleSheet.create({
     color: '#9CA3AF',
   },
 });
+
 

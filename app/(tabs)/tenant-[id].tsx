@@ -167,7 +167,7 @@ export default function TenantDetailsScreen() {
           <Text style={styles.cardTitle}>Room Assigned</Text>
           <View style={styles.roomContainer}>
             <View style={styles.roomIconContainer}>
-              <Ionicons name="home" size={32} color="#0E9F6E" />
+              <Ionicons name="home" size={32} color="#00BCD4" />
             </View>
             <View style={styles.roomInfo}>
               <Text style={styles.roomNumber}>Room {tenant.roomNo}</Text>
@@ -222,7 +222,7 @@ export default function TenantDetailsScreen() {
         {/* Action Buttons */}
         <View style={styles.actionButtons}>
           <TouchableOpacity style={styles.editButton} onPress={handleEdit}>
-            <Ionicons name="create-outline" size={20} color="#0E9F6E" />
+            <Ionicons name="create-outline" size={20} color="#00BCD4" />
             <Text style={styles.editButtonText}>Edit Tenant</Text>
           </TouchableOpacity>
 
@@ -291,7 +291,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   statusTextActive: {
-    color: '#0E9F6E',
+    color: '#00BCD4',
   },
   statusTextInactive: {
     color: '#DC2626',
@@ -437,13 +437,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#FFFFFF',
     borderWidth: 2,
-    borderColor: '#0E9F6E',
+    borderColor: '#00BCD4',
     borderRadius: 12,
     paddingVertical: 14,
     gap: 8,
   },
   editButtonText: {
-    color: '#0E9F6E',
+    color: '#00BCD4',
     fontSize: 16,
     fontWeight: '600',
   },

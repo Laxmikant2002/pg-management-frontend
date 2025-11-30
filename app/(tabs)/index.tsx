@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+﻿import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import {
@@ -65,7 +65,7 @@ export default function DashboardScreen() {
               <Ionicons name="notifications-outline" size={24} color="#6B7280" />
             </TouchableOpacity>
             <TouchableOpacity style={styles.iconButton}>
-              <Ionicons name="person-circle-outline" size={32} color="#0E9F6E" />
+              <Ionicons name="person-circle-outline" size={32} color="#00BCD4" />
             </TouchableOpacity>
           </View>
         </View>
@@ -82,14 +82,14 @@ export default function DashboardScreen() {
         <View style={styles.statsGrid}>
           {/* Total Rooms */}
           <View style={styles.statCard}>
-            <Ionicons name="business-outline" size={28} color="#0E9F6E" />
+            <Ionicons name="business-outline" size={28} color="#00BCD4" />
             <Text style={styles.statLabel}>Total Rooms</Text>
             <Text style={styles.statValue}>{stats.totalRooms}</Text>
           </View>
 
           {/* Occupied Rooms */}
           <View style={styles.statCard}>
-            <Ionicons name="people-outline" size={28} color="#0E9F6E" />
+            <Ionicons name="people-outline" size={28} color="#00BCD4" />
             <Text style={styles.statLabel}>Occupied</Text>
             <Text style={styles.statValue}>{stats.occupied}</Text>
             <Text style={styles.statSubtextGreen}>
@@ -107,7 +107,7 @@ export default function DashboardScreen() {
 
           {/* Monthly Collection */}
           <View style={styles.statCard}>
-            <Ionicons name="trending-up-outline" size={28} color="#0E9F6E" />
+            <Ionicons name="trending-up-outline" size={28} color="#00BCD4" />
             <Text style={styles.statLabel}>Monthly Collection</Text>
             <Text style={styles.statValue}>₹ {stats.monthlyCollection.toLocaleString('en-IN')}</Text>
             <Text style={styles.statSubtextGreen}>
@@ -146,7 +146,7 @@ export default function DashboardScreen() {
             onPress={() => handleQuickAction('tenants')}>
             <View style={styles.actionLeft}>
               <View style={[styles.actionIconContainer, styles.actionIconGreen]}>
-                <Ionicons name="people" size={24} color="#0E9F6E" />
+                <Ionicons name="people" size={24} color="#00BCD4" />
               </View>
               <View style={styles.actionTextContainer}>
                 <Text style={styles.actionTitle}>View Tenants</Text>
@@ -196,7 +196,7 @@ export default function DashboardScreen() {
             onPress={() => handleQuickAction('payments')}>
             <View style={styles.actionLeft}>
               <View style={[styles.actionIconContainer, styles.actionIconTeal]}>
-                <Ionicons name="receipt-outline" size={24} color="#0E9F6E" />
+                <Ionicons name="receipt-outline" size={24} color="#00BCD4" />
               </View>
               <View style={styles.actionTextContainer}>
                 <Text style={styles.actionTitle}>View Payments</Text>
@@ -282,7 +282,7 @@ const styles = StyleSheet.create({
   appTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#0E9F6E',
+    color: '#00BCD4',
     marginBottom: 4,
   },
   subtitle: {
@@ -350,7 +350,7 @@ const styles = StyleSheet.create({
   },
   statSubtextGreen: {
     fontSize: 11,
-    color: '#0E9F6E',
+    color: '#00BCD4',
     fontWeight: '500',
   },
   statSubtextBlue: {
@@ -539,3 +539,4 @@ const styles = StyleSheet.create({
     color: '#6B7280',
   },
 });
+

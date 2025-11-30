@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+﻿import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import {
@@ -91,7 +91,7 @@ export default function RoomsListScreen() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'Occupied':
-        return { bg: '#D1FAE5', text: '#0E9F6E' };
+        return { bg: '#D1FAE5', text: '#00BCD4' };
       case 'Vacant':
         return { bg: '#DBEAFE', text: '#3B82F6' };
       case 'Maintenance':
@@ -124,7 +124,7 @@ export default function RoomsListScreen() {
         onPress={() => handleViewDetails(item.id)}>
         <View style={styles.roomHeader}>
           <View style={styles.roomNumberContainer}>
-            <Ionicons name="home" size={24} color="#0E9F6E" />
+            <Ionicons name="home" size={24} color="#00BCD4" />
             <Text style={styles.roomNumber}>Room {item.roomNumber}</Text>
           </View>
           <View style={[styles.statusBadge, { backgroundColor: statusColor.bg }]}>
@@ -165,7 +165,7 @@ export default function RoomsListScreen() {
           style={styles.viewDetailsButton}
           onPress={() => handleViewDetails(item.id)}>
           <Text style={styles.viewDetailsButtonText}>View Details</Text>
-          <Ionicons name="chevron-forward" size={18} color="#0E9F6E" />
+          <Ionicons name="chevron-forward" size={18} color="#00BCD4" />
         </TouchableOpacity>
       </TouchableOpacity>
     );
@@ -319,7 +319,7 @@ const styles = StyleSheet.create({
     paddingTop: 12,
   },
   viewDetailsButtonText: {
-    color: '#0E9F6E',
+    color: '#00BCD4',
     fontSize: 14,
     fontWeight: '600',
     marginRight: 4,
@@ -335,3 +335,4 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
 });
+

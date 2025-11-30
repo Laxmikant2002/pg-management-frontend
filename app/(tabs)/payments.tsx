@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+﻿import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import {
@@ -95,7 +95,7 @@ export default function PaymentsListScreen() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'Paid':
-        return { bg: '#D1FAE5', text: '#0E9F6E', icon: 'checkmark-circle' };
+        return { bg: '#D1FAE5', text: '#00BCD4', icon: 'checkmark-circle' };
       case 'Pending':
         return { bg: '#FEF3C7', text: '#F59E0B', icon: 'time-outline' };
       case 'Overdue':
@@ -113,7 +113,7 @@ export default function PaymentsListScreen() {
         <View style={styles.paymentHeader}>
           <View style={styles.tenantInfo}>
             <View style={styles.tenantIconContainer}>
-              <Ionicons name="person" size={24} color="#0E9F6E" />
+              <Ionicons name="person" size={24} color="#00BCD4" />
             </View>
             <View style={styles.tenantDetails}>
               <Text style={styles.tenantName}>{item.tenantName}</Text>
@@ -146,7 +146,7 @@ export default function PaymentsListScreen() {
             <TouchableOpacity
               style={styles.markPaidButton}
               onPress={() => handleMarkPaid(item)}>
-              <Ionicons name="checkmark-circle" size={18} color="#0E9F6E" />
+              <Ionicons name="checkmark-circle" size={18} color="#00BCD4" />
               <Text style={styles.markPaidButtonText}>Mark Paid</Text>
             </TouchableOpacity>
           )}
@@ -182,7 +182,7 @@ export default function PaymentsListScreen() {
           <Text style={styles.summaryLabel}>Pending</Text>
         </View>
         <View style={styles.summaryCard}>
-          <Ionicons name="checkmark-circle" size={24} color="#0E9F6E" />
+          <Ionicons name="checkmark-circle" size={24} color="#00BCD4" />
           <Text style={styles.summaryValue}>{paidPayments.length}</Text>
           <Text style={styles.summaryLabel}>Paid</Text>
         </View>
@@ -378,13 +378,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#FFFFFF',
     borderWidth: 2,
-    borderColor: '#0E9F6E',
+    borderColor: '#00BCD4',
     borderRadius: 8,
     paddingVertical: 10,
     gap: 6,
   },
   markPaidButtonText: {
-    color: '#0E9F6E',
+    color: '#00BCD4',
     fontSize: 14,
     fontWeight: '600',
   },
@@ -420,4 +420,5 @@ const styles = StyleSheet.create({
     color: '#9CA3AF',
   },
 });
+
 

@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+﻿import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import {
@@ -117,7 +117,7 @@ export default function AddTenantScreen() {
                     }}>
                     <Text style={styles.dropdownItemText}>{type}</Text>
                     {formData.idProofType === type && (
-                      <Ionicons name="checkmark" size={20} color="#0E9F6E" />
+                      <Ionicons name="checkmark" size={20} color="#00BCD4" />
                     )}
                   </TouchableOpacity>
                 ))}
@@ -176,7 +176,7 @@ export default function AddTenantScreen() {
                     }}>
                     <Text style={styles.dropdownItemText}>Room {room}</Text>
                     {formData.room === room && (
-                      <Ionicons name="checkmark" size={20} color="#0E9F6E" />
+                      <Ionicons name="checkmark" size={20} color="#00BCD4" />
                     )}
                   </TouchableOpacity>
                 ))}
@@ -228,7 +228,7 @@ export default function AddTenantScreen() {
               <Switch
                 value={formData.isActive}
                 onValueChange={(value) => handleInputChange('isActive', value)}
-                trackColor={{ false: '#D1D5DB', true: '#0E9F6E' }}
+                trackColor={{ false: '#D1D5DB', true: '#00BCD4' }}
                 thumbColor="#FFFFFF"
               />
             </View>
@@ -387,12 +387,12 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   submitButton: {
-    backgroundColor: '#0E9F6E',
+    backgroundColor: '#00BCD4',
     borderRadius: 12,
     paddingVertical: 16,
     alignItems: 'center',
     marginTop: 8,
-    shadowColor: '#0E9F6E',
+    shadowColor: '#00BCD4',
     shadowOffset: {
       width: 0,
       height: 2,
@@ -407,4 +407,5 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
 });
+
 
