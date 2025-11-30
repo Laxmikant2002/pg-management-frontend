@@ -19,6 +19,7 @@ export default function TabLayout() {
           height: 60,
           paddingBottom: 8,
           paddingTop: 8,
+          position: 'relative',
         },
         tabBarLabelStyle: {
           fontSize: 12,
@@ -55,10 +56,77 @@ export default function TabLayout() {
       <Tabs.Screen
         name="reports"
         options={{
-          title: 'Reports',
+          title: 'Complaints',
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="bar-chart" size={size || 24} color={color} />
+            <Ionicons name="document-text" size={size || 24} color={color} />
           ),
+        }}
+      />
+      {/* Hide detail/add screens from tab bar */}
+      <Tabs.Screen
+        name="tenant-[id]"
+        options={{
+          href: null, // Hide from tab bar
+        }}
+      />
+      <Tabs.Screen
+        name="tenant-add"
+        options={{
+          href: null, // Hide from tab bar
+        }}
+      />
+      <Tabs.Screen
+        name="room-[id]"
+        options={{
+          href: null, // Hide from tab bar
+        }}
+      />
+      <Tabs.Screen
+        name="room-assign"
+        options={{
+          href: null, // Hide from tab bar
+        }}
+      />
+      <Tabs.Screen
+        name="payments"
+        options={{
+          href: null, // Hide from tab bar
+        }}
+      />
+      <Tabs.Screen
+        name="payment-history"
+        options={{
+          href: null, // Hide from tab bar
+        }}
+      />
+      <Tabs.Screen
+        name="payment-mark"
+        options={{
+          href: null, // Hide from tab bar
+        }}
+      />
+      <Tabs.Screen
+        name="complaint-[id]"
+        options={{
+          href: null, // Hide from tab bar
+        }}
+      />
+      <Tabs.Screen
+        name="complaint-add"
+        options={{
+          href: null, // Hide from tab bar
+        }}
+      />
+      <Tabs.Screen
+        name="complaints"
+        options={{
+          href: null, // Hide from tab bar (using reports instead)
+        }}
+      />
+      <Tabs.Screen
+        name="explore"
+        options={{
+          href: null, // Hide from tab bar
         }}
       />
     </Tabs>

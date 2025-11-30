@@ -3,12 +3,12 @@ import { useRouter } from 'expo-router';
 import React from 'react';
 import {
     FlatList,
-    SafeAreaView,
     StyleSheet,
     Text,
     TouchableOpacity,
     View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 interface Payment {
   id: string;
@@ -79,11 +79,17 @@ export default function PaymentsListScreen() {
   const router = useRouter();
 
   const handleMarkPaid = (payment: Payment) => {
-    router.push(`/(tabs)/payment-mark?paymentId=${payment.id}` as any);
+    router.push({
+      pathname: '/(tabs)/payment-mark',
+      params: { paymentId: payment.id },
+    });
   };
 
   const handleViewHistory = (tenantId: string) => {
-    router.push(`/(tabs)/payment-history?tenantId=${tenantId}` as any);
+    router.push({
+      pathname: '/(tabs)/payment-history',
+      params: { tenantId },
+    });
   };
 
   const getStatusColor = (status: string) => {
@@ -159,7 +165,7 @@ export default function PaymentsListScreen() {
   const paidPayments = mockPayments.filter((p) => p.status === 'Paid');
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top']}>
       {/* Header */}
       <View style={styles.header}>
         <View>
@@ -267,7 +273,7 @@ const styles = StyleSheet.create({
   },
   listContent: {
     paddingHorizontal: 20,
-    paddingBottom: 20,
+    paddingBottom: 100, // Extra padding for bottom tab bar
   },
   paymentCard: {
     backgroundColor: '#FFFFFF',

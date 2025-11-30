@@ -3,12 +3,12 @@ import { useRouter } from 'expo-router';
 import React from 'react';
 import {
     FlatList,
-    SafeAreaView,
     StyleSheet,
     Text,
     TouchableOpacity,
     View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 interface Tenant {
   id: string;
@@ -71,7 +71,10 @@ export default function TenantsListScreen() {
   };
 
   const handleViewDetails = (tenantId: string) => {
-    router.push(`/(tabs)/tenant-${tenantId}` as any);
+    router.push({
+      pathname: '/(tabs)/tenant-[id]',
+      params: { id: tenantId },
+    });
   };
 
   const renderTenantItem = ({ item }: { item: Tenant }) => (
@@ -124,7 +127,7 @@ export default function TenantsListScreen() {
   );
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top']}>
       {/* Header */}
       <View style={styles.header}>
         <View>
@@ -211,7 +214,7 @@ const styles = StyleSheet.create({
   },
   listContent: {
     paddingHorizontal: 20,
-    paddingBottom: 20,
+    paddingBottom: 100, // Extra padding for bottom tab bar
   },
   tenantCard: {
     backgroundColor: '#FFFFFF',

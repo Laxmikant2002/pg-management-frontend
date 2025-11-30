@@ -2,16 +2,17 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import {
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function DashboardScreen() {
   const router = useRouter();
+  
   const stats = {
     totalRooms: 24,
     occupied: 18,
@@ -24,7 +25,6 @@ export default function DashboardScreen() {
   };
 
   const handleQuickAction = (action: string) => {
-    const router = useRouter();
     switch (action) {
       case 'tenants':
         router.push('/(tabs)/tenants');
@@ -33,7 +33,10 @@ export default function DashboardScreen() {
         router.push('/(tabs)/rooms');
         break;
       case 'complaints':
-        router.push('/(tabs)/complaints');
+        router.push('/(tabs)/reports'); // Reports shows complaints
+        break;
+      case 'payments':
+        router.push('/(tabs)/payments');
         break;
       default:
         console.log(`Quick action: ${action}`);
@@ -46,7 +49,7 @@ export default function DashboardScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top']}>
       <ScrollView
         style={styles.scrollView}
         contentContainerStyle={styles.scrollContent}
@@ -187,6 +190,26 @@ export default function DashboardScreen() {
               <Ionicons name="chevron-forward" size={20} color="#6B7280" />
             </View>
           </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.actionCard}
+            onPress={() => handleQuickAction('payments')}>
+            <View style={styles.actionLeft}>
+              <View style={[styles.actionIconContainer, styles.actionIconTeal]}>
+                <Ionicons name="receipt-outline" size={24} color="#0E9F6E" />
+              </View>
+              <View style={styles.actionTextContainer}>
+                <Text style={styles.actionTitle}>View Payments</Text>
+                <Text style={styles.actionSubtitle}>Manage rent payments</Text>
+              </View>
+            </View>
+            <View style={styles.actionRight}>
+              <View style={styles.badge}>
+                <Text style={styles.badgeText}>5 Pending</Text>
+              </View>
+              <Ionicons name="chevron-forward" size={20} color="#6B7280" />
+            </View>
+          </TouchableOpacity>
         </View>
 
         {/* Recent Activity Section */}
@@ -243,7 +266,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollContent: {
-    paddingBottom: 20,
+    paddingBottom: 100, // Extra padding for bottom tab bar
   },
   header: {
     flexDirection: 'row',
@@ -434,6 +457,9 @@ const styles = StyleSheet.create({
   },
   actionIconOrange: {
     backgroundColor: '#FED7AA',
+  },
+  actionIconTeal: {
+    backgroundColor: '#D1FAE5',
   },
   actionTextContainer: {
     flex: 1,

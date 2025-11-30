@@ -3,13 +3,13 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import {
     Alert,
-    SafeAreaView,
     ScrollView,
     StyleSheet,
     Text,
     TouchableOpacity,
     View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Mock room data - replace with actual API call
 const getRoomData = (id: string) => {
@@ -115,13 +115,16 @@ export default function RoomDetailsScreen() {
   };
 
   const handleAssignTenant = () => {
-    router.push(`/(tabs)/room-assign?roomId=${id}` as any);
+    router.push({
+      pathname: '/(tabs)/room-assign',
+      params: { roomId: id },
+    });
   };
 
   const statusColor = getStatusColor(roomStatus);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top']}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
@@ -204,7 +207,10 @@ export default function RoomDetailsScreen() {
                     <Text style={styles.tenantDate}>Joined: {tenant.joiningDate}</Text>
                   </View>
                   <TouchableOpacity
-                    onPress={() => router.push(`/(tabs)/tenant-${tenant.id}` as any)}>
+                    onPress={() => router.push({
+                      pathname: '/(tabs)/tenant-[id]',
+                      params: { id: tenant.id },
+                    })}>
                     <Ionicons name="chevron-forward" size={20} color="#6B7280" />
                   </TouchableOpacity>
                 </View>

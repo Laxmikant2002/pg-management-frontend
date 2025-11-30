@@ -3,12 +3,12 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import React from 'react';
 import {
     FlatList,
-    SafeAreaView,
     StyleSheet,
     Text,
     TouchableOpacity,
     View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Mock tenant data - replace with actual API call
 const getTenantData = (tenantId: string) => {
@@ -190,7 +190,7 @@ export default function PaymentHistoryScreen() {
   const pendingPayments = paymentHistory.filter((p) => p.status !== 'Paid');
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top']}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
@@ -344,7 +344,7 @@ const styles = StyleSheet.create({
   },
   listContent: {
     paddingHorizontal: 20,
-    paddingBottom: 20,
+    paddingBottom: 40, // Adequate padding for scrollable content
   },
   listHeader: {
     fontSize: 18,

@@ -3,13 +3,28 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import {
     Alert,
-    SafeAreaView,
     ScrollView,
     StyleSheet,
     Text,
     TouchableOpacity,
     View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+// Helper function to find room ID by room number
+const findRoomIdByNumber = (roomNumber: string): string | null => {
+  const roomMapping: Record<string, string> = {
+    '101': '1',
+    '102': '2',
+    '103': '3',
+    '105': '4',
+    '201': '5',
+    '205': '6',
+    '301': '7',
+    '308': '8',
+  };
+  return roomMapping[roomNumber] || null;
+};
 
 // Mock complaint data - replace with actual API call
 const getComplaintData = (id: string) => {
@@ -164,7 +179,7 @@ export default function ComplaintDetailsScreen() {
   const statusLabel = getStatusLabel(complaintStatus);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top']}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
@@ -216,9 +231,19 @@ export default function ComplaintDetailsScreen() {
                 <Text style={styles.infoLabel}>Room</Text>
                 <Text style={styles.infoValue}>Room {complaint.roomNumber}</Text>
               </View>
-              {complaint.tenantId && (
+              {complaint.roomNumber && (
                 <TouchableOpacity
-                  onPress={() => router.push(`/(tabs)/room-${complaint.roomNumber}` as any)}>
+                  onPress={() => {
+                    const roomId = findRoomIdByNumber(complaint.roomNumber!);
+                    if (roomId) {
+                      router.push({
+                        pathname: '/(tabs)/room-[id]',
+                        params: { id: roomId },
+                      });
+                    } else {
+                      router.push('/(tabs)/rooms');
+                    }
+                  }}>
                   <Ionicons name="chevron-forward" size={20} color="#6B7280" />
                 </TouchableOpacity>
               )}
@@ -236,7 +261,10 @@ export default function ComplaintDetailsScreen() {
               </View>
               {complaint.tenantId && (
                 <TouchableOpacity
-                  onPress={() => router.push(`/(tabs)/tenant-${complaint.tenantId}` as any)}>
+                  onPress={() => router.push({
+                    pathname: '/(tabs)/tenant-[id]',
+                    params: { id: complaint.tenantId },
+                  })}>
                   <Ionicons name="chevron-forward" size={20} color="#6B7280" />
                 </TouchableOpacity>
               )}

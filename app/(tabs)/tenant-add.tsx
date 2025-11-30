@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import {
     KeyboardAvoidingView,
     Platform,
-    SafeAreaView,
     ScrollView,
     StyleSheet,
     Switch,
@@ -13,6 +12,7 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const ID_PROOF_TYPES = ['Aadhaar', 'PAN', 'Driving License', 'Passport', 'Voter ID'];
 
@@ -48,7 +48,7 @@ export default function AddTenantScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top']}>
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles.keyboardView}>

@@ -2,13 +2,13 @@ import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import React from 'react';
 import {
-    SafeAreaView,
     ScrollView,
     StyleSheet,
     Text,
     TouchableOpacity,
     View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Mock tenant data - replace with actual API call
 const getTenantData = (id: string) => {
@@ -67,11 +67,14 @@ export default function TenantDetailsScreen() {
   };
 
   const handleViewPaymentHistory = () => {
-    router.push(`/(tabs)/payment-history?tenantId=${tenant.id}` as any);
+    router.push({
+      pathname: '/(tabs)/payment-history',
+      params: { tenantId: tenant.id },
+    });
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top']}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>

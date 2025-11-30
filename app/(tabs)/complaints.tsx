@@ -3,12 +3,12 @@ import { useRouter } from 'expo-router';
 import React from 'react';
 import {
     FlatList,
-    SafeAreaView,
     StyleSheet,
     Text,
     TouchableOpacity,
     View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 interface Complaint {
   id: string;
@@ -81,7 +81,10 @@ export default function ComplaintsListScreen() {
   };
 
   const handleViewDetails = (complaintId: string) => {
-    router.push(`/(tabs)/complaint-${complaintId}` as any);
+    router.push({
+      pathname: '/(tabs)/complaint-[id]',
+      params: { id: complaintId },
+    });
   };
 
   const getStatusColor = (status: string) => {
@@ -178,7 +181,7 @@ export default function ComplaintsListScreen() {
   const resolvedComplaints = mockComplaints.filter((c) => c.status === 'RESOLVED');
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top']}>
       {/* Header */}
       <View style={styles.header}>
         <View>
@@ -318,7 +321,7 @@ const styles = StyleSheet.create({
   },
   listContent: {
     paddingHorizontal: 20,
-    paddingBottom: 20,
+    paddingBottom: 100, // Extra padding for bottom tab bar
   },
   complaintCard: {
     backgroundColor: '#FFFFFF',
